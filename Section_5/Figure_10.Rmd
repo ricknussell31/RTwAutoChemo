@@ -26,6 +26,10 @@ from numpy.fft import fftfreq, fftshift, fft2
 # #%load_ext Cython
 ```
 
+# Figure 10
+
+This will show the evolution of a 2D simulation for varying deposition functions. The code to produce those files is shown below. The simulations will take over 7 hours, so we sugest utilizing an HPC to replicate these. We import data from the HPC here to create these plots. 
+
 ```{python}
 def particleProjectionFaster(pos,meshsize):
     
@@ -108,10 +112,6 @@ Swimmers = PS.Plankton(DP.constantDep,d1=.1,d2=4,N = 5,depMaxStr=.01,
                         Const=3,L=10,k=.02,epsilon=1e-3,depThreshold=0.012, 
                     depTransWidth=0.008, num = 160000, c0=0.01)
 ```
-
-# Figure 10
-
-This will show the evolution of a 2D simulation for varying deposition functions. The code to produce those files is shown below. The simulations will take over 7 hours, so we sugest utilizing an HPC to replicate these. We import data from the HPC here to create these plots. 
 
 ```{python}
 meshsize = 400 #Chemical Mesh size
@@ -196,33 +196,33 @@ Low = 0.75
 High = 1.25
 
 j = times[0]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_C.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_C.npy'.format(Ts[j]))
 cs = axs[0].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[0].set_title(r'$t = {0}$',fontsize=40)
 axs[0].set_ylabel(r'$y$',fontsize=40)
 
 j = times[1]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_C.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_C.npy'.format(Ts[j]))
 cs = axs[1].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[1].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[2]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_C.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_C.npy'.format(Ts[j]))
 cs = axs[2].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[2].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 
 j = times[3]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_C.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_C.npy'.format(Ts[j]))
 cs = axs[3].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[3].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[4]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_C.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_C.npy'.format(Ts[j]))
 cs = axs[4].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[4].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
@@ -262,33 +262,33 @@ Low = 0.75
 High = 1.25
 
 j = times[0]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_A.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_A.npy'.format(Ts[j]))
 cs = axs[0].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[0].set_title(r'$t = {0}$',fontsize=40)
 axs[0].set_ylabel(r'$y$',fontsize=40)
 
 j = times[1]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_A.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_A.npy'.format(Ts[j]))
 cs = axs[1].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[1].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[2]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_A.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_A.npy'.format(Ts[j]))
 cs = axs[2].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[2].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 
 j = times[3]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_A.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_A.npy'.format(Ts[j]))
 cs = axs[3].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[3].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[4]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_A.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_A.npy'.format(Ts[j]))
 cs = axs[4].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[4].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
@@ -328,33 +328,33 @@ Low = 0.75
 High = 1.25
 
 j = times[0]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_L.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_L.npy'.format(Ts[j]))
 cs = axs[0].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[0].set_title(r'$t = {0}$',fontsize=40)
 axs[0].set_ylabel(r'$y$',fontsize=40)
 
 j = times[1]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_L.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_L.npy'.format(Ts[j]))
 cs = axs[1].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[1].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[2]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_L.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_L.npy'.format(Ts[j]))
 cs = axs[2].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[2].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 
 j = times[3]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_L.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_L.npy'.format(Ts[j]))
 cs = axs[3].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[3].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
 
 j = times[4]
-hts = np.load('./Data/LongSims2/PosDensNT{0}_L.npy'.format(Ts[j]))
+hts = np.load('./Data/ColorMaps/PosDensNT{0}_L.npy'.format(Ts[j]))
 cs = axs[4].pcolormesh(xm,ym,hts,cmap=cmaps)
 cs.set_clim(Low,High)
 axs[4].set_title(r'$t = {0}$'.format(round(Ts[j]*Swimmers.k)),fontsize=40)
@@ -401,9 +401,9 @@ fig, ax = plt.subplots(figsize=(7,5),tight_layout=True)
 
 colors = ['#000000','#009E73','#D55E00'] 
 
-SUMC = np.append(np.load('./Data/LongSimsOutput/TotChemC.npy'),np.load('./Data/LongSimsOutput/TotChemC2.npy'))
-SUMA = np.append(np.load('./Data/LongSimsOutput/TotChemA.npy'),np.load('./Data/LongSimsOutput/TotChemA2.npy'))
-SUML = np.append(np.load('./Data/LongSimsOutput/TotChemL.npy'),np.load('./Data/LongSimsOutput/TotChemL2.npy'))
+SUMC = np.load('./Data/TotalChemC.npy')
+SUMA = np.load('./Data/TotalChemA.npy')
+SUML = np.load('./Data/TotalChemL.npy')
 
 times = np.linspace(0,150,len(SUMC))
 
@@ -431,11 +431,11 @@ plt.figure(figsize=(7,5),tight_layout=True)
 colors = ['#000000','#009E73','#D55E00'] 
 binss = 150
 
-htc,xs = np.histogram(np.load('./Data/LongSimsOutput/PosDensNewEnd_C.npy'),
+htc,xs = np.histogram(np.load('./Data/ColorMaps/PosDensNewEnd_C.npy'),
                       bins=binss,range=(0.25,1.75),density=True)
-hts,xs = np.histogram(np.load('./Data/LongSimsOutput/PosDensNewEnd_A.npy'),
+hts,xs = np.histogram(np.load('./Data/ColorMaps/PosDensNewEnd_A.npy'),
                      bins=binss,range=(0.25,1.75),density=True)
-htl,xs = np.histogram(np.load('./Data/LongSimsOutput/PosDensNewEnd_L.npy'),
+htl,xs = np.histogram(np.load('./Data/ColorMaps/PosDensNewEnd_L.npy'),
                       bins=binss,range=(0.25,1.75),density=True)
 xs = (xs[1:] + xs[:-1])/2
 j = 0
